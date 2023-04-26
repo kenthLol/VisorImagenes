@@ -33,6 +33,12 @@
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Ventana = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cascadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mosaicoHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mosaicoVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +58,10 @@
             // 
             // archivoToolStripMenuItem
             // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoToolStripMenuItem,
+            this.cerrarToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
@@ -64,6 +74,10 @@
             // 
             // Ventana
             // 
+            this.Ventana.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cascadaToolStripMenuItem,
+            this.mosaicoHorizontalToolStripMenuItem,
+            this.mosaicoVerticalToolStripMenuItem});
             this.Ventana.Name = "Ventana";
             this.Ventana.Size = new System.Drawing.Size(61, 20);
             this.Ventana.Text = "Ventana";
@@ -73,6 +87,47 @@
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
+            // 
+            // cascadaToolStripMenuItem
+            // 
+            this.cascadaToolStripMenuItem.Name = "cascadaToolStripMenuItem";
+            this.cascadaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cascadaToolStripMenuItem.Text = "Cascada";
+            this.cascadaToolStripMenuItem.Click += new System.EventHandler(this.cascadaToolStripMenuItem_Click);
+            // 
+            // mosaicoHorizontalToolStripMenuItem
+            // 
+            this.mosaicoHorizontalToolStripMenuItem.Name = "mosaicoHorizontalToolStripMenuItem";
+            this.mosaicoHorizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mosaicoHorizontalToolStripMenuItem.Text = "Mosaico horizontal";
+            this.mosaicoHorizontalToolStripMenuItem.Click += new System.EventHandler(this.mosaicoHorizontalToolStripMenuItem_Click);
+            // 
+            // mosaicoVerticalToolStripMenuItem
+            // 
+            this.mosaicoVerticalToolStripMenuItem.Name = "mosaicoVerticalToolStripMenuItem";
+            this.mosaicoVerticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mosaicoVerticalToolStripMenuItem.Text = "Mosaico Vertical";
+            this.mosaicoVerticalToolStripMenuItem.Click += new System.EventHandler(this.mosaicoVerticalToolStripMenuItem_Click);
+            // 
+            // nuevoToolStripMenuItem
+            // 
+            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem.Text = "Nuevo";
+            // 
+            // cerrarToolStripMenuItem
+            // 
+            this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarToolStripMenuItem.Text = "Cerrar";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // VisorImagenes
             // 
@@ -98,6 +153,12 @@
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Ventana;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cascadaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mosaicoHorizontalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mosaicoVerticalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
 
