@@ -52,6 +52,12 @@
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaHija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaHija.Designer.cs">
+      <DependentUpon>VentanaHija.cs</DependentUpon>
+    </Compile>
     <Compile Include="VisorImagenes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VentanaHija.resx">
+      <DependentUpon>VentanaHija.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VisorImagenes.resx">
       <DependentUpon>VisorImagenes.cs</DependentUpon>
     </EmbeddedResource>
