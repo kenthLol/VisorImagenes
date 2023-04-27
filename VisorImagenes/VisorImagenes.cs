@@ -67,5 +67,7 @@ namespace VisorImagenes
         {
             this.HijaActiva.Close();
         }
+
+        
     }
 }
