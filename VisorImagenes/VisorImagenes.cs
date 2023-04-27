@@ -68,6 +68,14 @@ namespace VisorImagenes
             this.HijaActiva.Close();
         }
 
-        
+        private void rotar90ºToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.HijaActiva.Rotar90();
+        }
+
+        private void escribirTextoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.HijaActiva.Escribir();
+        }
     }
 }
