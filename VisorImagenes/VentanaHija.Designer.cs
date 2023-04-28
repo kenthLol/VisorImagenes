@@ -60,15 +60,16 @@
             // menuImagenAjustar
             // 
             this.menuImagenAjustar.Name = "menuImagenAjustar";
-            this.menuImagenAjustar.Size = new System.Drawing.Size(180, 22);
+            this.menuImagenAjustar.Size = new System.Drawing.Size(177, 22);
             this.menuImagenAjustar.Text = "Ajustar a la ventana";
             this.menuImagenAjustar.Click += new System.EventHandler(this.ajustarALaVentanaToolStripMenuItem_Click);
             // 
             // m_PictureBox
             // 
-            this.m_PictureBox.Location = new System.Drawing.Point(266, 142);
+            this.m_PictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.m_PictureBox.Location = new System.Drawing.Point(-2, -2);
             this.m_PictureBox.Name = "m_PictureBox";
-            this.m_PictureBox.Size = new System.Drawing.Size(100, 50);
+            this.m_PictureBox.Size = new System.Drawing.Size(10, 50);
             this.m_PictureBox.TabIndex = 0;
             this.m_PictureBox.TabStop = false;
             // 
@@ -76,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(812, 430);
             this.Controls.Add(this.m_PictureBox);
             this.Controls.Add(this.menuImagen);
             this.MainMenuStrip = this.menuImagen;
@@ -92,10 +93,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox m_PictureBox;
         private System.Windows.Forms.MenuStrip menuImagen;
         private System.Windows.Forms.ToolStripMenuItem imagenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuImagenAjustar;
+        private System.Windows.Forms.PictureBox m_PictureBox;
     }
 }
