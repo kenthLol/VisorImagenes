@@ -1,80 +1,31 @@
-# Visual Studio files
-.vs/
-/bin/
-/obj/
-*.exe
-*.pdb
-*.user
-*.suo
-*.cache
-*.dll
-*.dll.config
-*.log
-*.txt
-
-# ReSharper files
-_ReSharper.*
-
-# Build results
+# .NET Core and .NET Framework
+## Build results
 [Dd]ebug/
 [Rr]elease/
 x64/
-build/
-[Bb]in/
-[Oo]bj/
+bin/
+obj/
 
-# Visual Studio code coverage files
-*.coverage
-*.coveragexml
+## Visual Studio files
+*.user
+*.suo
+*.sln.docstates
+*.sln.ide
+*.suo
+*.csproj.user
+*.vcxproj.filters
+*.vcxproj.user
+*.vspscc
+*.vssscc
+*.pdb
+*.cache
+*.vsp
+*.psess
+*.vspf
+*.userprefs
+*.scc
 
-# NuGet packages
-packages/
-*.nupkg
-!.nuget/packages/repositories.config
-
-# MSTest test Results
-[Tt]est[Rr]esult*/
-
-# Build Results of an ATL Project
-[Dd]ebugPS/
-[Rr]eleasePS/
-dlldata.c
-
-# Windows Forms Designer generated code
-*.[Ff]orms.cs
-*.[Ff]orms.resx
-
-# PowerShell module manifest files
-*.psd1
-*.psm1
-*.ps1xml
-*.clixml
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Compressed files
-*.7z
-*.zip
-*.gz
-*.rar
-
-# Package Files #
-*.nupkg
-# Others
-[Tt]humbs.db
-*.DS_Store
+## Resharper files
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings
