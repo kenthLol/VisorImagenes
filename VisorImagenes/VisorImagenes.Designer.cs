@@ -31,20 +31,20 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ediciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rotar90ºToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.escribirTextoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.escalaDeGrisesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Ventana = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mosaicoHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mosaicoVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rotar90ºToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.escribirTextoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.escalaDeGrisesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ediciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,29 +78,73 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
+            // 
+            // guardarToolStripMenuItem
+            // 
+            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.guardarToolStripMenuItem.Text = "Guardar";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // cerrarToolStripMenuItem
             // 
             this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
-            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.cerrarToolStripMenuItem.Text = "Cerrar";
             this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // ediciónToolStripMenuItem
+            // 
+            this.ediciónToolStripMenuItem.Name = "ediciónToolStripMenuItem";
+            this.ediciónToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.ediciónToolStripMenuItem.Text = "Edición";
             // 
             // verToolStripMenuItem
             // 
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
             this.verToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.verToolStripMenuItem.Text = "Ver";
+            // 
+            // imagenToolStripMenuItem
+            // 
+            this.imagenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rotar90ºToolStripMenuItem,
+            this.escribirTextoToolStripMenuItem,
+            this.escalaDeGrisesToolStripMenuItem});
+            this.imagenToolStripMenuItem.Name = "imagenToolStripMenuItem";
+            this.imagenToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.imagenToolStripMenuItem.Text = "Imagen";
+            // 
+            // rotar90ºToolStripMenuItem
+            // 
+            this.rotar90ºToolStripMenuItem.Name = "rotar90ºToolStripMenuItem";
+            this.rotar90ºToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.rotar90ºToolStripMenuItem.Text = "Rotar 90º";
+            this.rotar90ºToolStripMenuItem.Click += new System.EventHandler(this.rotar90ºToolStripMenuItem_Click);
+            // 
+            // escribirTextoToolStripMenuItem
+            // 
+            this.escribirTextoToolStripMenuItem.Name = "escribirTextoToolStripMenuItem";
+            this.escribirTextoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.escribirTextoToolStripMenuItem.Text = "Escribir texto";
+            this.escribirTextoToolStripMenuItem.Click += new System.EventHandler(this.escribirTextoToolStripMenuItem_Click);
+            // 
+            // escalaDeGrisesToolStripMenuItem
+            // 
+            this.escalaDeGrisesToolStripMenuItem.Name = "escalaDeGrisesToolStripMenuItem";
+            this.escalaDeGrisesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.escalaDeGrisesToolStripMenuItem.Text = "Convertir a escala de grises";
+            this.escalaDeGrisesToolStripMenuItem.Click += new System.EventHandler(this.escalaDeGrisesToolStripMenuItem_Click);
             // 
             // Ventana
             // 
@@ -140,52 +184,9 @@
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
-            // imagenToolStripMenuItem
-            // 
-            this.imagenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rotar90ºToolStripMenuItem,
-            this.escribirTextoToolStripMenuItem,
-            this.escalaDeGrisesToolStripMenuItem});
-            this.imagenToolStripMenuItem.Name = "imagenToolStripMenuItem";
-            this.imagenToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.imagenToolStripMenuItem.Text = "Imagen";
-            // 
-            // rotar90ºToolStripMenuItem
-            // 
-            this.rotar90ºToolStripMenuItem.Name = "rotar90ºToolStripMenuItem";
-            this.rotar90ºToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.rotar90ºToolStripMenuItem.Text = "Rotar 90º";
-            this.rotar90ºToolStripMenuItem.Click += new System.EventHandler(this.rotar90ºToolStripMenuItem_Click);
-            // 
-            // escribirTextoToolStripMenuItem
-            // 
-            this.escribirTextoToolStripMenuItem.Name = "escribirTextoToolStripMenuItem";
-            this.escribirTextoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.escribirTextoToolStripMenuItem.Text = "Escribir texto";
-            this.escribirTextoToolStripMenuItem.Click += new System.EventHandler(this.escribirTextoToolStripMenuItem_Click);
-            // 
-            // escalaDeGrisesToolStripMenuItem
-            // 
-            this.escalaDeGrisesToolStripMenuItem.Name = "escalaDeGrisesToolStripMenuItem";
-            this.escalaDeGrisesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.escalaDeGrisesToolStripMenuItem.Text = "Convertir a escala de grises";
-            this.escalaDeGrisesToolStripMenuItem.Click += new System.EventHandler(this.escalaDeGrisesToolStripMenuItem_Click);
-            // 
-            // guardarToolStripMenuItem
-            // 
-            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.guardarToolStripMenuItem.Text = "Guardar";
-            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
-            // 
-            // ediciónToolStripMenuItem
-            // 
-            this.ediciónToolStripMenuItem.Name = "ediciónToolStripMenuItem";
-            this.ediciónToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.ediciónToolStripMenuItem.Text = "Edición";
-            // 
             // VisorImagenes
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1177, 594);
@@ -195,6 +196,8 @@
             this.Name = "VisorImagenes";
             this.Text = "Visor de Imágenes";
             this.Load += new System.EventHandler(this.VisorImagenes_Load);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.VisorImagenes_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.VisorImagenes_DragEnter);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

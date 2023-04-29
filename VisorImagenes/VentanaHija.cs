@@ -13,9 +13,15 @@ namespace VisorImagenes
         {
             InitializeComponent();
             this.Text = titulo;
+            this.Activated += VentanaHija_Activated;
             PictureBox = new PictureBox();
             PictureBox.Dock = DockStyle.Fill;
             Controls.Add(PictureBox);
+        }
+
+        private void VentanaHija_Activated(object sender, EventArgs e)
+        {
+            ((VisorImagenes)this.MdiParent).ActualizarMenus();
         }
 
         public PictureBox PictureBox

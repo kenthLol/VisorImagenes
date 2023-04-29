@@ -10,11 +10,36 @@ namespace VisorImagenes
         public VisorImagenes()
         {
             InitializeComponent();
+            this.ActualizarMenus();
         }
 
         public VentanaHija HijaActiva
         {
             get { return this.ActiveMdiChild as VentanaHija; }
+        }
+
+        public void ActualizarMenus()
+        {
+            // Deshabilitar el elemento del menú "Cerrar" si no hay ventana hija activa
+            this.cerrarToolStripMenuItem.Enabled = (this.HijaActiva != null);
+            this.guardarToolStripMenuItem.Enabled = (this.HijaActiva != null);
+            this.escalaDeGrisesToolStripMenuItem.Enabled = (this.HijaActiva != null);
+            this.escribirTextoToolStripMenuItem.Enabled = (this.HijaActiva != null);
+            this.rotar90ºToolStripMenuItem.Enabled = (this.HijaActiva != null);
+
+            // Deshabilitar los elementos del menú "Cascada" y "Mosaico" si no hay más de una ventana hija
+            if (this.MdiChildren.Length > 1)
+            {
+                this.cascadaToolStripMenuItem.Enabled = true;
+                this.mosaicoHorizontalToolStripMenuItem.Enabled = true;
+                this.mosaicoVerticalToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                this.cascadaToolStripMenuItem.Enabled = false;
+                this.mosaicoHorizontalToolStripMenuItem.Enabled = false;
+                this.mosaicoVerticalToolStripMenuItem.Enabled = false;
+            }
         }
 
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -26,16 +51,19 @@ namespace VisorImagenes
         private void cascadaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.LayoutMdi(MdiLayout.Cascade);
+            ActualizarMenus();
         }
 
         private void mosaicoHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.LayoutMdi(MdiLayout.TileHorizontal);
+            ActualizarMenus();
         }
 
         private void mosaicoVerticalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.LayoutMdi(MdiLayout.TileVertical);
+            ActualizarMenus();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,21 +95,25 @@ namespace VisorImagenes
         private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.HijaActiva.Close();
-        }
+            ActualizarMenus();
+        } 
 
         private void rotar90ºToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.HijaActiva.Rotar90();
+            ActualizarMenus();
         }
 
         private void escribirTextoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.HijaActiva.Escribir();
+            ActualizarMenus();
         }
 
         private void escalaDeGrisesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.HijaActiva.ConvertirEscalaDeGrises();
+            ActualizarMenus();
         }
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,6 +155,46 @@ namespace VisorImagenes
         private void VisorImagenes_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void VisorImagenes_DragEnter(object sender, DragEventArgs e)
+        {
+            // Nos aseguramos de que lo que se está arrastrando son archivos 
+            if (!e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.None;
+                return;
+            }
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string file in files)
+            {
+                if (!file.ToUpper().EndsWith(".JPG") &&
+                    !file.ToUpper().EndsWith(".JPEG") &&
+                    !file.ToUpper().EndsWith(".PNG") &&
+                    !file.ToUpper().EndsWith(".BMP") &&
+                    !file.ToUpper().EndsWith(".GIF"))
+                {
+                    e.Effect = DragDropEffects.None; // Uno de los archivos no 
+                                                     // es una imagen 
+                    return;
+                }
+            }
+            e.Effect = DragDropEffects.Copy; // Correcto, son todo imágenes 
+        }
+
+        private void VisorImagenes_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string file in files)
+            {
+                AbrirArchivo(file);
+            }
+        }
+
+        public void AbrirArchivo(string rutaArchivo)
+        {
+            string title = "Doc" + (this.MdiChildren.Length + 1);
+            NuevaHija(title, System.Drawing.Image.FromFile(rutaArchivo));
         }
     }
 }
