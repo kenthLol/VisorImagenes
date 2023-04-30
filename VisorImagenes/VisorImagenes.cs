@@ -11,6 +11,8 @@ namespace VisorImagenes
         {
             InitializeComponent();
             this.ActualizarMenus();
+            mostrarBarraDeHerramientasToolStripMenuItem.Checked = true;
+            mostrarBarraDeEstadoToolStripMenuItem.Checked = true;
         }
 
         public VentanaHija HijaActiva
@@ -54,6 +56,7 @@ namespace VisorImagenes
             this.rotar90ToolStripMenuItem.Enabled =
             this.escribirTextoToolStripMenuItem1.Enabled =
             this.convertirAEscalaDeGrisesToolStripMenuItem.Enabled =
+            this.cascadaToolStripMenuItem.Enabled =
             this.mosaicoHorizontalToolStripMenuItem.Enabled =
             this.mosaicoVerticalToolStripMenuItem.Enabled = false;
         }
@@ -274,34 +277,138 @@ namespace VisorImagenes
             etiquetaEstado.Text = "";
         }
 
-        private void rotar90ºToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        private void rotar90ToolStripMenuItem_MouseEnter(object sender, EventArgs e)
         {
             etiquetaEstado.Text = "Rotar la imagen a 90°";
         }
 
-        private void rotar90ºToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        private void rotar90ToolStripMenuItem_MouseLeave(object sender, EventArgs e)
         {
             etiquetaEstado.Text = "";
         }
 
-        private void escribirTextoToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        private void escribirTextoToolStripMenuItem1_MouseEnter(object sender, EventArgs e)
         {
             etiquetaEstado.Text = "Escribir texto Programacíón Visual en la parte superior de la imagen";
         }
 
-        private void escribirTextoToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        private void escribirTextoToolStripMenuItem1_MouseLeave(object sender, EventArgs e)
         {
             etiquetaEstado.Text = "";
         }
 
-        private void escalaDeGrisesToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        private void convertirAEscalaDeGrisesToolStripMenuItem_MouseEnter(object sender, EventArgs e)
         {
             etiquetaEstado.Text = "Convierte a escala de grises la imagen";
         }
 
-        private void escalaDeGrisesToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        private void convertirAEscalaDeGrisesToolStripMenuItem_MouseLeave(object sender, EventArgs e)
         {
             etiquetaEstado.Text = "";
+        }
+
+        private void mostrarBarraDeHerramientasToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Mostrar/Ocultar barra de herramientas";
+        }
+
+        private void mostrarBarraDeHerramientasToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void mostrarBarraDeEstadoToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Mostrar/Ocultar barra de estado";
+        }
+
+        private void mostrarBarraDeEstadoToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void cascadaToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Ver imagenes en cascada";
+        }
+
+        private void cascadaToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void mosaicoHorizontalToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Ver imagenes en mosaico horizontal";
+        }
+
+        private void mosaicoHorizontalToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void mosaicoVerticalToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Ver imagenes en mosaico vertical";
+        }
+
+        private void mosaicoVerticalToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void ayudaToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Ver Acerca de";
+        }
+
+        private void ayudaToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void nuevoBoton_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Abre un archivo de imagen";
+        }
+
+        private void nuevoBoton_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void aboutBoton_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Ver Acerca de";
+        }
+
+        private void aboutBoton_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void mostrarBarraDeHerramientasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (mostrarBarraDeHerramientasToolStripMenuItem.Checked)
+            {
+                barraHerramientas.Visible = true;
+            }
+            else
+            {
+                barraHerramientas.Visible = false;
+            }
+        }
+
+        private void mostrarBarraDeEstadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (mostrarBarraDeEstadoToolStripMenuItem.Checked)
+            {
+                statusStrip1.Visible = true;
+            }
+            else
+            {
+                statusStrip1.Visible = false;
+            }
         }
     }
 }
