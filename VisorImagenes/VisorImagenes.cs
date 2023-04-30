@@ -98,25 +98,25 @@ namespace VisorImagenes
             ActualizarMenus();
         } 
 
-        private void rotar90ºToolStripMenuItem_Click(object sender, EventArgs e)
+        public void rotar90ºToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.HijaActiva.Rotar90();
             ActualizarMenus();
         }
 
-        private void escribirTextoToolStripMenuItem_Click(object sender, EventArgs e)
+        public void escribirTextoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.HijaActiva.Escribir();
             ActualizarMenus();
         }
 
-        private void escalaDeGrisesToolStripMenuItem_Click(object sender, EventArgs e)
+        public void escalaDeGrisesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.HijaActiva.ConvertirEscalaDeGrises();
             ActualizarMenus();
         }
 
-        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        public void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Imagen JPEG|*.jpg|Imagen PNG|*.png|Imagen BMP|*.bmp|Todos los archivos|*.*";
@@ -195,6 +195,107 @@ namespace VisorImagenes
         {
             string title = "Doc" + (this.MdiChildren.Length + 1);
             NuevaHija(title, System.Drawing.Image.FromFile(rutaArchivo));
+        }
+
+        private void VisorImagenes_MdiChildActivate(object sender, EventArgs e)
+        {
+            // ... 
+            ToolStripManager.RevertMerge(this.barraHerramientas);
+            VentanaHija ventanaHijaActiva = this.ActiveMdiChild as VentanaHija;
+            if (ventanaHijaActiva != null)
+            {
+                ToolStripManager.Merge(ventanaHijaActiva.barraHerramientas, this.barraHerramientas);
+            }
+        }
+
+        private void nuevoBoton_Click(object sender, EventArgs e)
+        {
+            nuevoToolStripMenuItem_Click(sender, e);
+        }
+
+        private void aboutBoton_Click(object sender, EventArgs e)
+        {
+            ayudaToolStripMenuItem_Click(sender, e);
+        }
+
+        private void nuevoToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Abre un archivo de imagen";
+        }
+
+        private void nuevoToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void guardarToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Guardar imagen";
+        }
+
+        private void guardarToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void cerrarToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Cerrar imagen";
+        }
+
+        private void cerrarToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void salirToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Cerrar el programa";
+        }
+
+        private void salirToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void rotar90ºToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Rotar la imagen a 90°";
+        }
+
+        private void rotar90ºToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void escribirTextoToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Escribir texto Programacíón Visual en la parte superior de la imagen";
+        }
+
+        private void escribirTextoToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void escalaDeGrisesToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "Convierte a escala de grises la imagen";
+        }
+
+        private void escalaDeGrisesToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            etiquetaEstado.Text = "";
+        }
+
+        private void rotar90ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void escribirTextoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
