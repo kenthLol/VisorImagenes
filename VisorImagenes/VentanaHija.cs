@@ -10,6 +10,8 @@ namespace VisorImagenes
     public partial class VentanaHija : Form
     {
         private VisorImagenes m_Parent;
+        public event EventHandler<string> BotonMouseEnter;
+        public event EventHandler         BotonMouseLeave;
 
         public VentanaHija(string titulo, VisorImagenes parent)
         {
@@ -151,6 +153,58 @@ namespace VisorImagenes
         private void VentanaHija_FormClosed(object sender, FormClosedEventArgs e)
         {
             m_Parent.OnCloseHija();
+        }
+
+        private void guardarBoton_MouseEnter(object sender, EventArgs e)
+        {
+            BotonMouseEnter?.Invoke(this, "Guardar");
+        }
+
+        private void guardarBoton_MouseLeave(object sender, EventArgs e)
+        {
+            BotonMouseLeave?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void ajustarBoton_MouseEnter(object sender, EventArgs e)
+        {
+            BotonMouseEnter?.Invoke(this, ajustarBoton.Text);
+        }
+
+        private void ajustarBoton_MouseLeave(object sender, EventArgs e)
+        {
+            BotonMouseLeave?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void grisesBoton_MouseEnter(object sender, EventArgs e)
+        {
+            BotonMouseEnter?.Invoke(this, grisesBoton.Text);
+        }
+
+        private void grisesBoton_MouseLeave(object sender, EventArgs e)
+        {
+            BotonMouseLeave?.Invoke(this, EventArgs.Empty);
+
+        }
+
+        private void girarBoton_MouseEnter(object sender, EventArgs e)
+        {
+            BotonMouseEnter?.Invoke(this, girarBoton.Text);
+        }
+
+        private void girarBoton_MouseLeave(object sender, EventArgs e)
+        {
+            BotonMouseLeave?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void textoBoton_MouseEnter(object sender, EventArgs e)
+        {
+            BotonMouseEnter?.Invoke(this, textoBoton.Text);
+        }
+
+        private void textoBoton_MouseLeave(object sender, EventArgs e)
+        {
+            BotonMouseLeave?.Invoke(this, EventArgs.Empty);
+
         }
     }
 }

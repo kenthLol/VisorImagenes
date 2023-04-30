@@ -109,6 +109,8 @@
             this.guardarBoton.Size = new System.Drawing.Size(23, 22);
             this.guardarBoton.Text = "Guardar";
             this.guardarBoton.Click += new System.EventHandler(this.guardarBoton_Click);
+            this.guardarBoton.MouseEnter += new System.EventHandler(this.guardarBoton_MouseEnter);
+            this.guardarBoton.MouseLeave += new System.EventHandler(this.guardarBoton_MouseLeave);
             // 
             // toolStripSeparator1
             // 
@@ -128,6 +130,8 @@
             this.ajustarBoton.Size = new System.Drawing.Size(23, 22);
             this.ajustarBoton.Text = "Ajustar a ventana";
             this.ajustarBoton.Click += new System.EventHandler(this.ajustarBoton_Click);
+            this.ajustarBoton.MouseEnter += new System.EventHandler(this.ajustarBoton_MouseEnter);
+            this.ajustarBoton.MouseLeave += new System.EventHandler(this.ajustarBoton_MouseLeave);
             // 
             // grisesBoton
             // 
@@ -140,6 +144,8 @@
             this.grisesBoton.Size = new System.Drawing.Size(23, 22);
             this.grisesBoton.Text = "Escala de grises";
             this.grisesBoton.Click += new System.EventHandler(this.grisesBoton_Click);
+            this.grisesBoton.MouseEnter += new System.EventHandler(this.grisesBoton_MouseEnter);
+            this.grisesBoton.MouseLeave += new System.EventHandler(this.grisesBoton_MouseLeave);
             // 
             // girarBoton
             // 
@@ -152,6 +158,8 @@
             this.girarBoton.Size = new System.Drawing.Size(23, 22);
             this.girarBoton.Text = "Rotar 90°";
             this.girarBoton.Click += new System.EventHandler(this.girarBoton_Click);
+            this.girarBoton.MouseEnter += new System.EventHandler(this.girarBoton_MouseEnter);
+            this.girarBoton.MouseLeave += new System.EventHandler(this.girarBoton_MouseLeave);
             // 
             // textoBoton
             // 
@@ -164,6 +172,8 @@
             this.textoBoton.Size = new System.Drawing.Size(23, 22);
             this.textoBoton.Text = "Añadir texto";
             this.textoBoton.Click += new System.EventHandler(this.textoBoton_Click);
+            this.textoBoton.MouseEnter += new System.EventHandler(this.textoBoton_MouseEnter);
+            this.textoBoton.MouseLeave += new System.EventHandler(this.textoBoton_MouseLeave);
             // 
             // VentanaHija
             // 

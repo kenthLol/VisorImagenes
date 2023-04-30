@@ -99,6 +99,8 @@ namespace VisorImagenes
                 string title = "Doc" + (this.MdiChildren.Length + 1);
                 NuevaHija(title, System.Drawing.Image.FromFile(openFileDialog.FileName));
             }
+
+            SubscriptionToChildEvent();
         }
 
         private void NuevaHija(string título, System.Drawing.Image imagen = null)
@@ -415,6 +417,25 @@ namespace VisorImagenes
             {
                 statusStrip1.Visible = false;
             }
+        }
+
+        private void SubscriptionToChildEvent()
+        {
+            //Suscribirse al evento de cuando se hace hover en un boton
+            HijaActiva.BotonMouseEnter += VentanaHija_BotonMouseEnter;
+            HijaActiva.BotonMouseLeave += VentanaHija_BotonMouseLeave;
+        }
+
+        private void VentanaHija_BotonMouseEnter(object sender, string nombreBoton)
+        {
+            // Actualiza el texto del StatusBar con el nombre del botón en la ventana hija
+            etiquetaEstado.Text = nombreBoton;
+        }
+
+        private void VentanaHija_BotonMouseLeave(object sender, EventArgs e)
+        {
+            // Borra el texto del StatusBar
+            etiquetaEstado.Text = "";
         }
     }
 }
