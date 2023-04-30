@@ -23,9 +23,9 @@ namespace VisorImagenes
             // Deshabilitar el elemento del menú "Cerrar" si no hay ventana hija activa
             this.cerrarToolStripMenuItem.Enabled = (this.HijaActiva != null);
             this.guardarToolStripMenuItem.Enabled = (this.HijaActiva != null);
-            this.escalaDeGrisesToolStripMenuItem.Enabled = (this.HijaActiva != null);
-            this.escribirTextoToolStripMenuItem.Enabled = (this.HijaActiva != null);
-            this.rotar90ºToolStripMenuItem.Enabled = (this.HijaActiva != null);
+            this.convertirAEscalaDeGrisesToolStripMenuItem.Enabled = (this.HijaActiva != null);
+            this.escribirTextoToolStripMenuItem1.Enabled = (this.HijaActiva != null);
+            this.rotar90ToolStripMenuItem.Enabled = (this.HijaActiva != null);
 
             // Deshabilitar los elementos del menú "Cascada" y "Mosaico" si no hay más de una ventana hija
             if (this.MdiChildren.Length > 1)
@@ -114,21 +114,21 @@ namespace VisorImagenes
         {
             this.HijaActiva.Close();
             ActualizarMenus();
-        } 
+        }
 
-        public void rotar90ºToolStripMenuItem_Click(object sender, EventArgs e)
+        private void rotar90ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.HijaActiva.Rotar90();
             ActualizarMenus();
         }
 
-        public void escribirTextoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void escribirTextoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.HijaActiva.Escribir();
             ActualizarMenus();
         }
 
-        public void escalaDeGrisesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void convertirAEscalaDeGrisesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.HijaActiva.ConvertirEscalaDeGrises();
             ActualizarMenus();
@@ -304,16 +304,6 @@ namespace VisorImagenes
         private void escalaDeGrisesToolStripMenuItem_MouseLeave(object sender, EventArgs e)
         {
             etiquetaEstado.Text = "";
-        }
-
-        private void rotar90ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void escribirTextoToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
