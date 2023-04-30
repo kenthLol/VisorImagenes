@@ -44,7 +44,6 @@ namespace VisorImagenes
 
         public void OnCloseHija()
         {
-            //this.ActualizarMenus();
             this.DisableMenus();
         }
 
@@ -52,10 +51,9 @@ namespace VisorImagenes
         {
             this.cerrarToolStripMenuItem.Enabled =
             this.guardarToolStripMenuItem.Enabled =
-            this.escalaDeGrisesToolStripMenuItem.Enabled =
-            this.escribirTextoToolStripMenuItem.Enabled =
-            this.rotar90ºToolStripMenuItem.Enabled = 
-            this.cascadaToolStripMenuItem.Enabled =
+            this.rotar90ToolStripMenuItem.Enabled =
+            this.escribirTextoToolStripMenuItem1.Enabled =
+            this.convertirAEscalaDeGrisesToolStripMenuItem.Enabled =
             this.mosaicoHorizontalToolStripMenuItem.Enabled =
             this.mosaicoVerticalToolStripMenuItem.Enabled = false;
         }
