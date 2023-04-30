@@ -42,6 +42,24 @@ namespace VisorImagenes
             }
         }
 
+        public void OnCloseHija()
+        {
+            //this.ActualizarMenus();
+            this.DisableMenus();
+        }
+
+        private void DisableMenus()
+        {
+            this.cerrarToolStripMenuItem.Enabled =
+            this.guardarToolStripMenuItem.Enabled =
+            this.escalaDeGrisesToolStripMenuItem.Enabled =
+            this.escribirTextoToolStripMenuItem.Enabled =
+            this.rotar90ºToolStripMenuItem.Enabled = 
+            this.cascadaToolStripMenuItem.Enabled =
+            this.mosaicoHorizontalToolStripMenuItem.Enabled =
+            this.mosaicoVerticalToolStripMenuItem.Enabled = false;
+        }
+
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutBox1 aboutBox1 = new AboutBox1();
@@ -84,7 +102,7 @@ namespace VisorImagenes
 
         private void NuevaHija(string título, System.Drawing.Image imagen = null)
         {
-            VentanaHija fh = new VentanaHija(título);
+            VentanaHija fh = new VentanaHija(título, this);
             fh.Text = título;
             fh.MdiParent = this;
             fh.PictureBox.Image = imagen;

@@ -9,7 +9,9 @@ namespace VisorImagenes
 {
     public partial class VentanaHija : Form
     {
-        public VentanaHija(string titulo)
+        private VisorImagenes m_Parent;
+
+        public VentanaHija(string titulo, VisorImagenes parent)
         {
             InitializeComponent();
             this.Text = titulo;
@@ -17,6 +19,7 @@ namespace VisorImagenes
             PictureBox = new PictureBox();
             PictureBox.Dock = DockStyle.Fill;
             Controls.Add(PictureBox);
+            m_Parent = parent;
         }
 
         private void VentanaHija_Activated(object sender, EventArgs e)
@@ -144,6 +147,11 @@ namespace VisorImagenes
         private void textoBoton_Click(object sender, EventArgs e)
         {
             Escribir();
+        }
+
+        private void VentanaHija_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            m_Parent.OnCloseHija();
         }
     }
 }

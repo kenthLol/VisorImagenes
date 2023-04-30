@@ -176,6 +176,7 @@
             this.MainMenuStrip = this.menuImagen;
             this.Name = "VentanaHija";
             this.Text = "VentanaHija";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.VentanaHija_FormClosed);
             this.Resize += new System.EventHandler(this.VentanaHija_Resize);
             this.menuImagen.ResumeLayout(false);
             this.menuImagen.PerformLayout();
