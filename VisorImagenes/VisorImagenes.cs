@@ -137,6 +137,7 @@ namespace VisorImagenes
 
         public void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Test.
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Imagen JPEG|*.jpg|Imagen PNG|*.png|Imagen BMP|*.bmp|Todos los archivos|*.*";
             saveFileDialog.Title = "Guardar imagen como...";
@@ -229,7 +230,12 @@ namespace VisorImagenes
 
         private void nuevoBoton_Click(object sender, EventArgs e)
         {
-            nuevoToolStripMenuItem_Click(sender, e);
+            this.nuevoToolStripMenuItem_Click(sender, e);
+        }
+
+        private void guardarBoton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hey");
         }
 
         private void aboutBoton_Click(object sender, EventArgs e)

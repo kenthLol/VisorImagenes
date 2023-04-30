@@ -125,8 +125,7 @@ namespace VisorImagenes
 
         private void guardarBoton_Click(object sender, EventArgs e)
         {
-            VisorImagenes miObjeto = new VisorImagenes();
-            miObjeto.guardarToolStripMenuItem_Click(sender, e);
+            m_Parent.guardarToolStripMenuItem_Click(sender, e);
         }
 
         private void ajustarBoton_Click(object sender, EventArgs e)
