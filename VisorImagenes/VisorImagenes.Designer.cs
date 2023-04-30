@@ -40,10 +40,6 @@
             this.escribirTextoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.convertirAEscalaDeGrisesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rotar90ºToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.escribirTextoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.escalaDeGrisesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Ventana = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mosaicoHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +62,6 @@
             this.archivoToolStripMenuItem,
             this.ediciónToolStripMenuItem,
             this.verToolStripMenuItem,
-            this.imagenToolStripMenuItem,
             this.Ventana,
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -152,49 +147,13 @@
             this.convertirAEscalaDeGrisesToolStripMenuItem.Name = "convertirAEscalaDeGrisesToolStripMenuItem";
             this.convertirAEscalaDeGrisesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.convertirAEscalaDeGrisesToolStripMenuItem.Text = "Convertir a escala de grises";
+            this.convertirAEscalaDeGrisesToolStripMenuItem.Click += new System.EventHandler(this.convertirAEscalaDeGrisesToolStripMenuItem_Click);
             // 
             // verToolStripMenuItem
             // 
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
             this.verToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.verToolStripMenuItem.Text = "Ver";
-            // 
-            // imagenToolStripMenuItem
-            // 
-            this.imagenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rotar90ºToolStripMenuItem,
-            this.escribirTextoToolStripMenuItem,
-            this.escalaDeGrisesToolStripMenuItem});
-            this.imagenToolStripMenuItem.Name = "imagenToolStripMenuItem";
-            this.imagenToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.imagenToolStripMenuItem.Text = "Imagen";
-            // 
-            // rotar90ºToolStripMenuItem
-            // 
-            this.rotar90ºToolStripMenuItem.Name = "rotar90ºToolStripMenuItem";
-            this.rotar90ºToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.rotar90ºToolStripMenuItem.Text = "Rotar 90º";
-            this.rotar90ºToolStripMenuItem.Click += new System.EventHandler(this.rotar90ºToolStripMenuItem_Click);
-            this.rotar90ºToolStripMenuItem.MouseEnter += new System.EventHandler(this.rotar90ºToolStripMenuItem_MouseEnter);
-            this.rotar90ºToolStripMenuItem.MouseLeave += new System.EventHandler(this.rotar90ºToolStripMenuItem_MouseLeave);
-            // 
-            // escribirTextoToolStripMenuItem
-            // 
-            this.escribirTextoToolStripMenuItem.Name = "escribirTextoToolStripMenuItem";
-            this.escribirTextoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.escribirTextoToolStripMenuItem.Text = "Escribir texto";
-            this.escribirTextoToolStripMenuItem.Click += new System.EventHandler(this.escribirTextoToolStripMenuItem_Click);
-            this.escribirTextoToolStripMenuItem.MouseEnter += new System.EventHandler(this.escribirTextoToolStripMenuItem_MouseEnter);
-            this.escribirTextoToolStripMenuItem.MouseLeave += new System.EventHandler(this.escribirTextoToolStripMenuItem_MouseLeave);
-            // 
-            // escalaDeGrisesToolStripMenuItem
-            // 
-            this.escalaDeGrisesToolStripMenuItem.Name = "escalaDeGrisesToolStripMenuItem";
-            this.escalaDeGrisesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.escalaDeGrisesToolStripMenuItem.Text = "Convertir a escala de grises";
-            this.escalaDeGrisesToolStripMenuItem.Click += new System.EventHandler(this.escalaDeGrisesToolStripMenuItem_Click);
-            this.escalaDeGrisesToolStripMenuItem.MouseEnter += new System.EventHandler(this.escalaDeGrisesToolStripMenuItem_MouseEnter);
-            this.escalaDeGrisesToolStripMenuItem.MouseLeave += new System.EventHandler(this.escalaDeGrisesToolStripMenuItem_MouseLeave);
             // 
             // Ventana
             // 
@@ -209,21 +168,21 @@
             // cascadaToolStripMenuItem
             // 
             this.cascadaToolStripMenuItem.Name = "cascadaToolStripMenuItem";
-            this.cascadaToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.cascadaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cascadaToolStripMenuItem.Text = "Cascada";
             this.cascadaToolStripMenuItem.Click += new System.EventHandler(this.cascadaToolStripMenuItem_Click);
             // 
             // mosaicoHorizontalToolStripMenuItem
             // 
             this.mosaicoHorizontalToolStripMenuItem.Name = "mosaicoHorizontalToolStripMenuItem";
-            this.mosaicoHorizontalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.mosaicoHorizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mosaicoHorizontalToolStripMenuItem.Text = "Mosaico horizontal";
             this.mosaicoHorizontalToolStripMenuItem.Click += new System.EventHandler(this.mosaicoHorizontalToolStripMenuItem_Click);
             // 
             // mosaicoVerticalToolStripMenuItem
             // 
             this.mosaicoVerticalToolStripMenuItem.Name = "mosaicoVerticalToolStripMenuItem";
-            this.mosaicoVerticalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.mosaicoVerticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mosaicoVerticalToolStripMenuItem.Text = "Mosaico Vertical";
             this.mosaicoVerticalToolStripMenuItem.Click += new System.EventHandler(this.mosaicoVerticalToolStripMenuItem_Click);
             // 
@@ -341,10 +300,6 @@
         private System.Windows.Forms.ToolStripMenuItem rotar90ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem escribirTextoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem convertirAEscalaDeGrisesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem imagenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rotar90ºToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem escribirTextoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem escalaDeGrisesToolStripMenuItem;
     }
 }
 
